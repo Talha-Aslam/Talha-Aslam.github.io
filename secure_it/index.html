@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Secure It · Password Manager</title>
+<meta name="description" content="Secure It is a zero-knowledge password manager. Your vault is encrypted on your device and, if you choose, synced through your own Google Drive. No company servers.">
+<!--
+  Public home page for the Secure It app. Google's OAuth consent screen links here
+  ("Application home page"), so it must describe the app, say how it uses Google
+  data, and link the privacy policy. Hosted on the same authorized domain as the
+  privacy policy: https://talha-aslam-portfolio.me/secure_it/
+-->
+<style>
+  :root {
+    --bg: #f2f4f7;
+    --surface: #ffffff;
+    --ink: #141822;
+    --muted: #5e6879;
+    --line: #d8dde6;
+    --accent: #4338ca;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0e1117;
+      --surface: #171b23;
+      --ink: #e7eaf0;
+      --muted: #9aa4b4;
+      --line: #2c3340;
+      --accent: #a5b4fc;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  main { max-width: 46rem; margin: 0 auto; padding: 48px 20px 64px; }
+  header { display: flex; align-items: center; gap: 14px; }
+  header img { height: 60px; width: auto; }
+  h1 { margin: 0; font-size: 2rem; letter-spacing: -0.02em; }
+  .tag { margin: 4px 0 0; color: var(--muted); }
+  .lead { font-size: 1.15rem; margin: 28px 0; }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.5rem;
+    margin: 16px 0;
+  }
+  h2 { font-size: 1.1rem; margin: 0 0 8px; }
+  ul { margin: 0; padding-left: 1.2rem; }
+  li { margin: 4px 0; }
+  a { color: var(--accent); }
+  code { font-size: 0.92em; }
+  footer { margin-top: 36px; color: var(--muted); font-size: 0.92rem; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <img src="logo.png" alt="Secure It logo">
+    <div>
+      <h1>Secure It</h1>
+      <p class="tag">Your passwords. Your Drive. Only yours.</p>
+    </div>
+  </header>
+
+  <p class="lead">
+    Secure It is a zero-knowledge password manager for Android, iOS, Windows and your browser.
+    Your vault is encrypted on your device, and you can sync it through <strong>your own</strong>
+    Google Drive. We run no servers, so nobody else holds your passwords or your key.
+  </p>
+
+  <div class="card">
+    <h2>What it does</h2>
+    <ul>
+      <li>Stores logins in a vault encrypted with AES-256-GCM; your master password is protected with Argon2id.</li>
+      <li>Unlocks with your fingerprint, generates strong passwords, and organises logins into categories.</li>
+      <li>Imports saved passwords from your browser (CSV) in one step.</li>
+      <li>Shares a login through a secure link that expires automatically.</li>
+      <li>12-word recovery phrase and an Emergency Kit PDF so you never get locked out.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>How Secure It uses your Google account</h2>
+    <ul>
+      <li>Linking Google Drive is optional and off by default.</li>
+      <li>The app requests only <code>drive.file</code>, so it can see only the files it creates itself (your
+        encrypted <code>vault.enc</code> and any share files) and never the rest of your Drive, plus
+        <code>userinfo.email</code> to show which account is linked.</li>
+      <li>Everything is encrypted on your device before upload. Neither Google nor we can read it.</li>
+      <li>Google user data is never sold, used for advertising, or read by any person. Secure It's use of
+        information received from Google APIs adheres to the
+        <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>,
+        including the Limited Use requirements.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Privacy &amp; support</h2>
+    <ul>
+      <li><a href="https://talha-aslam-portfolio.me/secure_it_privacy_policy/">Privacy policy</a></li>
+      <li>Support: <a href="mailto:talhaaslamdev@gmail.com">talhaaslamdev@gmail.com</a></li>
+    </ul>
+  </div>
+
+  <footer>Secure It · Android package <code>com.talha.secure_it</code> · Developed by Talha Aslam</footer>
+</main>
+</body>
+</html>
